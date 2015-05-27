@@ -1,0 +1,18 @@
+<h1>Rails Simian Gym</h1>
+<p>This application is a simple way to exercise the <a href="https://github.com/Netflix/SimianArmy">Simian Army</a>.
+  The idea is to create a environment in which these tools can be understood and tinkered with so lessons can be
+  comfortably taken to production apps. In particular:
+</p>
+<ul>
+<li>The Gym takes a lot of resources every request, so it often needs to autoscale. This gives Chaos Monkey a chance to kill many instances.</li>
+  <li>The Gym generates a lot of garbage for the Janitor Monkey to pick up.</li>
+  <li>The Gym deliberately changes launches non-compliant instances and other resources so the Conformity Monkey can complain.</li>
+</ul>
+
+<p>Analyzing the behavior of this application will hopefully provide you with insight into the functionality and configuration of the Simian Army.
+  Additionally, the development environment of the gym itself reflects some best practices regarding devops and ruggedization *before* launch such
+  as the use of tools like gauntlt and mitten and sslyze as part of the production procedures.
+
+</p>
+
+<p>2015 Fabio Arciniegas <a href="fab.arciniegas@gmail.com">fab.arciniegas@gmail.com</a></p>
