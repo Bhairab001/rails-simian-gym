@@ -15,8 +15,6 @@ class TaskTest < ActiveSupport::TestCase
  def test_completion
    assert_equal @task.completion,0
    @task.work
-   sleep(2)
-   assert_not_equal @task.completion,0
    assert_not_nil @task.pid
  end
 

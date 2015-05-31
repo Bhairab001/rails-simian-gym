@@ -8,12 +8,12 @@ class Task < ActiveRecord::Base
 
   def work
     @not_working = true
+    self.pid=Process.spawn("ls -al")
+    self.save
     Thread.new do
       @start_time = Time.new
       #TODO: log this time both to the app log and the appropriate model for UI display
       @end_time = @start_time+1
-      self.pid=start_time.to_s.to_i
-      save
       while completion < 99
         sleep(3)
       end
