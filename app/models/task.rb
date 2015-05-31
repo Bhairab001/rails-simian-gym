@@ -11,11 +11,11 @@ class Task < ActiveRecord::Base
     Thread.new do
       @start_time = Time.new
       #TODO: log this time both to the app log and the appropriate model for UI display
-      @end_time = @start_time+60
-      sleep(2)
+      @end_time = @start_time+1
+      self.pid=start_time.to_s.to_i
+      save
       while completion < 99
-        print "completion #{completion}\n"
-        sleep(2)
+        sleep(3)
       end
       #TODO: make duration customizable
     end
@@ -26,8 +26,8 @@ class Task < ActiveRecord::Base
     return 0 if @end_time.nil?
     current_time = Time.new
     total = @end_time - @start_time
-    left = @end_time - current_time
-    (left/total)*100
+    left = @end_time - current_time < 0 ? 0 : @end_time - current_time
+    100-(left/total)*100
   end
 
 end
