@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
 
   def work
     @not_working = true
-    self.pid=Process.spawn("ls -al")
+    self.pid=Process.spawn("yes")
     self.save
     Thread.new do
       @start_time = Time.new
@@ -16,6 +16,7 @@ class Task < ActiveRecord::Base
       @end_time = @start_time+1
       while completion < 99
         sleep(3)
+        #TODO: kill the yes command after completion
       end
       #TODO: make duration customizable
     end
