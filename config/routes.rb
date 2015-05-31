@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+#  get 'tasks/:id/work' => 'task#work', as: :work
+    resources :tasks do
+     member do
+       get 'work'
+     end
+    end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
