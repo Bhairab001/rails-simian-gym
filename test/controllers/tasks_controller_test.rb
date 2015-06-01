@@ -11,9 +11,12 @@ class TasksControllerTest < ActionController::TestCase
     assert_not_nil assigns(:tasks)
   end
 
+  #of course this is not the standard rails RESTful way but helps
+  #this app be easy to automate and stress with curl get requests
   test "should get new" do
-    get :new
-    assert_response :success
+    assert_difference('Task.count') do
+      get :new
+    end
   end
 
   test "should create task" do
@@ -21,6 +24,8 @@ class TasksControllerTest < ActionController::TestCase
       post :create, task: { name: @task.name }
     end
 
+    #deliberately not fixed so Jenkins can throw an error as
+    #result of controller tests not passing.
     assert_redirected_to task_path(assigns(:task))
   end
 

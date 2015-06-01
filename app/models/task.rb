@@ -1,11 +1,6 @@
 class Task < ActiveRecord::Base
   attr_reader :start_time, :end_time
 
-  def after_create
-    @start_time = 0
-    @end_time = 0
-  end
-
   def work
     @not_working = true
     self.pid=Process.spawn("yes")
