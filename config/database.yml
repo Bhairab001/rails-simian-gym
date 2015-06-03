@@ -9,16 +9,9 @@ default: &default
   pool: 5
   timeout: 5000
 
-# TODO: set this connection in AWS
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: example
-     pool: 10
-     username: simiandb
-     password:
-     socket: /var/run/mysqld/mysqld.sock
-     reconnect: true
+  <<: *default
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db/production.sqlite3¯
