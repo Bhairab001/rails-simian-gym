@@ -15,7 +15,7 @@ development:
   database: example
      pool: 10
      username: simiandb
-     password: simian00)
+     password: 
      socket: /var/run/mysqld/mysqld.sock
      reconnect: true
 
