@@ -24,9 +24,9 @@ class TasksControllerTest < ActionController::TestCase
       post :create, task: { name: @task.name }
     end
 
-    #deliberately not fixed so Jenkins can throw an error as
-    #result of controller tests not passing.
-   # assert_redirected_to task_path(assigns(:task))
+    # deliberately wrong expectation so rake/Jenkins can throw an error as
+    # result of controller tests not passing.
+    # assert_redirected_to task_path(assigns(:task))
   end
 
   test "should show task" do

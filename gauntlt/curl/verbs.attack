@@ -4,7 +4,7 @@ Background:
   Given "curl" is installed
   And the following profile:
     | name     | value      |
-    | hostname | google.com |
+    | hostname | localhost:3000 |
 
 Scenario Outline: Verify server responds correctly to various HTTP methods
   When I launch a "curl" attack with:

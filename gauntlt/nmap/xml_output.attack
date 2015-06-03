@@ -5,7 +5,7 @@ Feature: XML output
     Given "nmap" is installed
     And the following profile:
       | name     | value      |
-      | hostname | scanme.nmap.org |
+      | hostname | localhost:3000 |
 
   Scenario: Output to XML
     When I launch an "nmap" attack with:

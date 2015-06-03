@@ -9,6 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
 
+# TODO: set this connection in AWS
 development:
   adapter: mysql2
   encoding: utf8

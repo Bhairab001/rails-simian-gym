@@ -6,7 +6,7 @@ Feature: simple nmap attack (sanity check)
 
     And the following environment variables:
       | name      | environment_variable_name |
-      | hostname  | TEST_HOSTNAME             |
+      | hostname  | localhost             |
 
     And the following profile:
       | name     | value |

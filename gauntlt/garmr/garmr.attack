@@ -4,7 +4,7 @@ Scenario: Use Garmr to scan a website for the Mozilla opioniated security requir
   Given "garmr" is installed
   And the following profile:
     | name       | value                      |
-    | target_url | http://localhost:8008      |
+    | target_url | http://localhost:3000      |
   When I launch a "garmr" attack with:
     """
     garmr -u <target_url> -o my_garmr_output.xml

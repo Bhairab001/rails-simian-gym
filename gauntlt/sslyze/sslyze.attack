@@ -4,7 +4,7 @@ Background:
   Given "sslyze" is installed
   And the following profile:
     | name     | value      |
-    | hostname | google.com |
+    | hostname | localhost:3000 |
 
 Scenario: Ensure no anonymous certificates
   When I launch an "sslyze" attack with:

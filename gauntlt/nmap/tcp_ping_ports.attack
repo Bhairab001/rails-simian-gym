@@ -4,7 +4,7 @@ Feature: nmap attacks for example.com
     Given "nmap" is installed
     And the following profile:
       | name           | value           |
-      | hostname       | scanme.nmap.org |
+      | hostname       | localhost:3000 |
       | tcp_ping_ports | 22,25,80,443    |
 
   Scenario: Using tcp syn ping scan and the nmap fast flag

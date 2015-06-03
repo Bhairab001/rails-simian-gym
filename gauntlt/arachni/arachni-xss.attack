@@ -5,6 +5,6 @@ Scenario: Using the arachni, look for cross site scripting and verify no issues 
   Given "arachni" is installed
   And the following profile:
      | name                | value                          |
-     | url                 | http://scanme.nmap.org         |
+     | url                 | http://localhost:3000              |
   When I launch an "arachni-simple_xss" attack
   Then the output should contain "0 issues were detected."
