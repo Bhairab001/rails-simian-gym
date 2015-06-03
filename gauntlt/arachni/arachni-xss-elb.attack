@@ -5,7 +5,7 @@ Scenario: Using the arachni, look for cross site scripting and verify no issues 
   Given "arachni" is installed
   And the following profile:
      | name                | value                          |
-     | url                 | http://172.16.58.91:3000          |
+     | url                 | http://simian-elb-21515975.us-east-1.elb.amazonaws.com          |
   When I launch an "arachni" attack with:
   """
     arachni <url>
