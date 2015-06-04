@@ -1,13 +1,23 @@
 <h1>Rails Simian Gym</h1>
-<p>This application is a simple way to exercise the <a href="https://github.com/Netflix/SimianArmy">Simian Army</a>.
-  The idea is to create a environment in which these tools can be understood and tinkered with so lessons can be
-  comfortably taken to production apps. In particular:
+<p>This application will help us discuss:</p>
+<ul>
+  <li>dependency management and tools like bundle</li>
+  <li>continuous integration and security tasks as normal/easy build steps with tools like gauntlt</li>
+  <li>security tools integrated recurrently on the CI side e.g. arachni</li>
+  <li>integrating quick security tools in dev and CI in one single human-readable form: dirb,garmr,sqlmap</li>
+  <li>integrating simple configuration checks in CI: heartbleed, nmap,sslyze</li>
+</ul>
+
+<p>This application is also simple way to exercise the <a href="https://github.com/Netflix/SimianArmy">Simian Army</a>.
+  The idea is to create a environment in which these post-deployment tools can be understood and tinkered with so lessons can be
+  comfortably taken to production apps.
 </p>
 <ul>
-<li>Uses lot of resources every request, so it often needs to autoscale. This gives Chaos Monkey a chance to kill instances.</li>
+<li>The app uses lot of resources (<a href="<%=tasks_url=%>">tasks</a>)every request, so it often needs to autoscale. This gives Chaos Monkey a chance to kill instances.</li>
   <li>The app will appear deliberately unhealthy so the Janitor Monkey picks it up.</li>
   <li>The Gym deliberately changes launches non-compliant instances and other resources so the Conformity Monkey can complain.</li>
 </ul>
+
 
 <!--
 <p>Analyzing the behavior of this application will hopefully provide you with insight into the functionality and configuration of the Simian Army.
