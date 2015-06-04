@@ -1,0 +1,16 @@
+"ASG1" : {
+   "UpdatePolicy" : {
+      "AutoScalingRollingUpdate" : {
+         "MinInstancesInService" : "1",
+         "MaxBatchSize" : "1",
+         "PauseTime" : "PT12M5S"
+      }
+   },
+   "Type" : "AWS::AutoScaling::AutoScalingGroup",
+   "Properties" : {
+      "AvailabilityZones" : { "Fn::GetAZs" : { "Ref" : "AWS::Region" } },
+      "LaunchConfigurationName" : { "Ref" : "ASLC" },
+      "MaxSize" : "3",
+      "MinSize" : "1"
+   }
+}
