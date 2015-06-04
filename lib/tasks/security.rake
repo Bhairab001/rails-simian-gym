@@ -1,14 +1,17 @@
 namespace :security do
-  desc "TODO"
+  desc "run dirb"
   task dirb: :environment do
+    sh('gauntlt gauntlt/dirb/*')
   end
 
-  desc "TODO"
+  desc "garmr"
   task garmr: :environment do
+    sh('gauntlt gauntlt/dirb/*')
   end
 
-  desc "TODO"
-  task heartbleed: :environment do
+  desc "gauntlt"
+  task gauntlt: :environment do
+    sh('gauntlt gauntlt')
   end
 
 end
