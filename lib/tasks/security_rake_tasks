@@ -1,0 +1,6 @@
+namespace :security do
+    desc "Run Gauntlt and other tools as rake tasks"
+    task :scan => :environment do
+      'gauntlt ~/rails-simian-gym/
+    end
+  end
